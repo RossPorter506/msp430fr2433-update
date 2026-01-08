@@ -50,8 +50,10 @@ pub type ADCON_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL0_SPEC, bool
 pub type ADCMSC_R = crate::BitReader<bool>;
 #[doc = "Field `ADCMSC` writer - ADC Multiple SampleConversion"]
 pub type ADCMSC_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL0_SPEC, bool, O>;
+#[doc = "Field `ADCSHT` reader - ADC Sample Hold Select Bit: 0"]
+pub type ADCSHT_R = crate::FieldReader<u8, ADCSHT_A>;
 #[doc = "ADC Sample Hold Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSHT_A {
     #[doc = "0: ADC Sample Hold Select 0"]
@@ -93,8 +95,6 @@ impl From<ADCSHT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCSHT` reader - ADC Sample Hold Select Bit: 0"]
-pub type ADCSHT_R = crate::FieldReader<u8, ADCSHT_A>;
 impl ADCSHT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

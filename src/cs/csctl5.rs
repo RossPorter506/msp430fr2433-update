@@ -34,8 +34,10 @@ impl From<crate::W<CSCTL5_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DIVM` reader - MCLK Divider Bit: 0"]
+pub type DIVM_R = crate::FieldReader<u8, DIVM_A>;
 #[doc = "MCLK Divider Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVM_A {
     #[doc = "0: MCLK Source Divider 0"]
@@ -61,8 +63,6 @@ impl From<DIVM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DIVM` reader - MCLK Divider Bit: 0"]
-pub type DIVM_R = crate::FieldReader<u8, DIVM_A>;
 impl DIVM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -164,8 +164,10 @@ impl<'a, const O: u8> DIVM_W<'a, O> {
         self.variant(DIVM_A::DIVM_7)
     }
 }
+#[doc = "Field `DIVS` reader - SMCLK Divider Bit: 0"]
+pub type DIVS_R = crate::FieldReader<u8, DIVS_A>;
 #[doc = "SMCLK Divider Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVS_A {
     #[doc = "0: SMCLK Source Divider 0"]
@@ -183,8 +185,6 @@ impl From<DIVS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DIVS` reader - SMCLK Divider Bit: 0"]
-pub type DIVS_R = crate::FieldReader<u8, DIVS_A>;
 impl DIVS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

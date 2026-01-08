@@ -54,8 +54,10 @@ pub type CCI_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CCTL1_SPEC, bool,
 pub type CCIE_R = crate::BitReader<bool>;
 #[doc = "Field `CCIE` writer - Capture/compare interrupt enable"]
 pub type CCIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CCTL1_SPEC, bool, O>;
+#[doc = "Field `OUTMOD` reader - Output mode 2"]
+pub type OUTMOD_R = crate::FieldReader<u8, OUTMOD_A>;
 #[doc = "Output mode 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OUTMOD_A {
     #[doc = "0: PWM output mode: 0 - output only"]
@@ -81,8 +83,6 @@ impl From<OUTMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OUTMOD` reader - Output mode 2"]
-pub type OUTMOD_R = crate::FieldReader<u8, OUTMOD_A>;
 impl OUTMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -197,8 +197,10 @@ pub type SCCI_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CCTL1_SPEC, bool
 pub type SCS_R = crate::BitReader<bool>;
 #[doc = "Field `SCS` writer - Capture sychronize"]
 pub type SCS_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CCTL1_SPEC, bool, O>;
+#[doc = "Field `CCIS` reader - Capture input select 1"]
+pub type CCIS_R = crate::FieldReader<u8, CCIS_A>;
 #[doc = "Capture input select 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CCIS_A {
     #[doc = "0: Capture input select: 0 - CCIxA"]
@@ -216,8 +218,6 @@ impl From<CCIS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CCIS` reader - Capture input select 1"]
-pub type CCIS_R = crate::FieldReader<u8, CCIS_A>;
 impl CCIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -275,8 +275,10 @@ impl<'a, const O: u8> CCIS_W<'a, O> {
         self.variant(CCIS_A::CCIS_3)
     }
 }
+#[doc = "Field `CM` reader - Capture mode 1"]
+pub type CM_R = crate::FieldReader<u8, CM_A>;
 #[doc = "Capture mode 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CM_A {
     #[doc = "0: Capture mode: 0 - disabled"]
@@ -294,8 +296,6 @@ impl From<CM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CM` reader - Capture mode 1"]
-pub type CM_R = crate::FieldReader<u8, CM_A>;
 impl CM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

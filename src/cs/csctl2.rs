@@ -74,8 +74,10 @@ pub type FLLN8_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool,
 pub type FLLN9_R = crate::BitReader<bool>;
 #[doc = "Field `FLLN9` writer - FLL Multipier Bit : 9"]
 pub type FLLN9_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
+#[doc = "Field `FLLD` reader - Loop Divider Bit : 0"]
+pub type FLLD_R = crate::FieldReader<u8, FLLD_A>;
 #[doc = "Loop Divider Bit : 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLD_A {
     #[doc = "0: Multiply Selected Loop Freq. By 1"]
@@ -101,8 +103,6 @@ impl From<FLLD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FLLD` reader - Loop Divider Bit : 0"]
-pub type FLLD_R = crate::FieldReader<u8, FLLD_A>;
 impl FLLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

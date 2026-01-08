@@ -46,8 +46,10 @@ pub type TAIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CTL_SPEC, bool, 
 pub type TACLR_R = crate::BitReader<bool>;
 #[doc = "Field `TACLR` writer - Timer A counter clear"]
 pub type TACLR_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CTL_SPEC, bool, O>;
+#[doc = "Field `MC` reader - Timer A mode control 1"]
+pub type MC_R = crate::FieldReader<u8, MC_A>;
 #[doc = "Timer A mode control 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MC_A {
     #[doc = "0: Timer A mode control: 0 - Stop"]
@@ -65,8 +67,6 @@ impl From<MC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MC` reader - Timer A mode control 1"]
-pub type MC_R = crate::FieldReader<u8, MC_A>;
 impl MC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -124,8 +124,10 @@ impl<'a, const O: u8> MC_W<'a, O> {
         self.variant(MC_A::MC_3)
     }
 }
+#[doc = "Field `ID` reader - Timer A clock input divider 1"]
+pub type ID_R = crate::FieldReader<u8, ID_A>;
 #[doc = "Timer A clock input divider 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ID_A {
     #[doc = "0: Timer A input divider: 0 - /1"]
@@ -143,8 +145,6 @@ impl From<ID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ID` reader - Timer A clock input divider 1"]
-pub type ID_R = crate::FieldReader<u8, ID_A>;
 impl ID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -202,8 +202,10 @@ impl<'a, const O: u8> ID_W<'a, O> {
         self.variant(ID_A::ID_3)
     }
 }
+#[doc = "Field `TASSEL` reader - Timer A clock source select 1"]
+pub type TASSEL_R = crate::FieldReader<u8, TASSEL_A>;
 #[doc = "Timer A clock source select 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TASSEL_A {
     #[doc = "0: Timer A clock source select: 0 - TACLK"]
@@ -221,8 +223,6 @@ impl From<TASSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TASSEL` reader - Timer A clock source select 1"]
-pub type TASSEL_R = crate::FieldReader<u8, TASSEL_A>;
 impl TASSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

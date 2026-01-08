@@ -34,8 +34,10 @@ impl From<crate::W<CSCTL4_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SELMS` reader - MCLK and SMCLK Source Select Bit: 0"]
+pub type SELMS_R = crate::FieldReader<u8, SELMS_A>;
 #[doc = "MCLK and SMCLK Source Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELMS_A {
     #[doc = "0: MCLK and SMCLK Source Select 0"]
@@ -61,8 +63,6 @@ impl From<SELMS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SELMS` reader - MCLK and SMCLK Source Select Bit: 0"]
-pub type SELMS_R = crate::FieldReader<u8, SELMS_A>;
 impl SELMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

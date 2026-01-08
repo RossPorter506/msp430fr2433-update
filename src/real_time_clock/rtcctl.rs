@@ -46,8 +46,10 @@ pub type RTCIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCCTL_SPEC, bool,
 pub type RTCSR_R = crate::BitReader<bool>;
 #[doc = "Field `RTCSR` writer - Low-Power-Counter Software Reset"]
 pub type RTCSR_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCCTL_SPEC, bool, O>;
+#[doc = "Field `RTCPS` reader - Low-Power-Counter Clock Pre-divider Select Bit: 0"]
+pub type RTCPS_R = crate::FieldReader<u8, RTCPS_A>;
 #[doc = "Low-Power-Counter Clock Pre-divider Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTCPS_A {
     #[doc = "0: Low-Power-Counter Clock Pre-divider Select: 0"]
@@ -73,8 +75,6 @@ impl From<RTCPS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTCPS` reader - Low-Power-Counter Clock Pre-divider Select Bit: 0"]
-pub type RTCPS_R = crate::FieldReader<u8, RTCPS_A>;
 impl RTCPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -176,8 +176,10 @@ impl<'a, const O: u8> RTCPS_W<'a, O> {
         self.variant(RTCPS_A::RTCPS_7)
     }
 }
+#[doc = "Field `RTCSS` reader - Low-Power-Counter Clock Source Select Bit: 0"]
+pub type RTCSS_R = crate::FieldReader<u8, RTCSS_A>;
 #[doc = "Low-Power-Counter Clock Source Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTCSS_A {
     #[doc = "0: Low-Power-Counter Clock Source Select: 0"]
@@ -195,8 +197,6 @@ impl From<RTCSS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTCSS` reader - Low-Power-Counter Clock Source Select Bit: 0"]
-pub type RTCSS_R = crate::FieldReader<u8, RTCSS_A>;
 impl RTCSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

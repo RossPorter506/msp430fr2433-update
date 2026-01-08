@@ -50,56 +50,56 @@ pub type PMMREGOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL0_SPEC, 
 pub type SVSHE_R = crate::BitReader<bool>;
 #[doc = "Field `SVSHE` writer - SVS high side enable"]
 pub type SVSHE_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL0_SPEC, bool, O>;
+#[doc = "Field `PMMPW` reader - PMM Password"]
+pub type PMMPW_R = crate::FieldReader<u8, PMMPWR_A>;
 #[doc = "PMM Password\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PMMPW_A {
+pub enum PMMPWR_A {
     #[doc = "150: Values always reads from the PMMCTL0 register"]
     PASSWORD = 150,
 }
-impl From<PMMPW_A> for u8 {
+impl From<PMMPWR_A> for u8 {
     #[inline(always)]
-    fn from(variant: PMMPW_A) -> Self {
+    fn from(variant: PMMPWR_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `PMMPW` reader - PMM Password"]
-pub type PMMPW_R = crate::FieldReader<u8, PMMPW_A>;
 impl PMMPW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PMMPW_A> {
+    pub fn variant(&self) -> Option<PMMPWR_A> {
         match self.bits {
-            150 => Some(PMMPW_A::PASSWORD),
+            150 => Some(PMMPWR_A::PASSWORD),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PASSWORD`"]
     #[inline(always)]
     pub fn is_password(&self) -> bool {
-        *self == PMMPW_A::PASSWORD
+        *self == PMMPWR_A::PASSWORD
     }
 }
 #[doc = "PMM Password\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PMMPW_AW {
+pub enum PMMPWW_AW {
     #[doc = "165: Values which must be written to the PMMCTL0 register"]
     PASSWORD = 165,
 }
-impl From<PMMPW_AW> for u8 {
+impl From<PMMPWW_AW> for u8 {
     #[inline(always)]
-    fn from(variant: PMMPW_AW) -> Self {
+    fn from(variant: PMMPWW_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `PMMPW` writer - PMM Password"]
-pub type PMMPW_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PMMCTL0_SPEC, u8, PMMPW_AW, 8, O>;
+pub type PMMPW_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PMMCTL0_SPEC, u8, PMMPWW_AW, 8, O>;
 impl<'a, const O: u8> PMMPW_W<'a, O> {
     #[doc = "Values which must be written to the PMMCTL0 register"]
     #[inline(always)]
     pub fn password(self) -> &'a mut W {
-        self.variant(PMMPW_AW::PASSWORD)
+        self.variant(PMMPWW_AW::PASSWORD)
     }
 }
 impl R {

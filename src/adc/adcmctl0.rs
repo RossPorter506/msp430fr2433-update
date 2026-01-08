@@ -34,8 +34,10 @@ impl From<crate::W<ADCMCTL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADCINCH` reader - ADC Input Channel Select Bit 0"]
+pub type ADCINCH_R = crate::FieldReader<u8, ADCINCH_A>;
 #[doc = "ADC Input Channel Select Bit 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCINCH_A {
     #[doc = "0: ADC Input Channel 0"]
@@ -77,8 +79,6 @@ impl From<ADCINCH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCINCH` reader - ADC Input Channel Select Bit 0"]
-pub type ADCINCH_R = crate::FieldReader<u8, ADCINCH_A>;
 impl ADCINCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -269,8 +269,10 @@ impl<'a, const O: u8> ADCINCH_W<'a, O> {
         self.variant(ADCINCH_A::ADCINCH_15)
     }
 }
+#[doc = "Field `ADCSREF` reader - ADC Select Reference Bit 0"]
+pub type ADCSREF_R = crate::FieldReader<u8, ADCSREF_A>;
 #[doc = "ADC Select Reference Bit 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSREF_A {
     #[doc = "0: ADC Select Reference 0"]
@@ -296,8 +298,6 @@ impl From<ADCSREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCSREF` reader - ADC Select Reference Bit 0"]
-pub type ADCSREF_R = crate::FieldReader<u8, ADCSREF_A>;
 impl ADCSREF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

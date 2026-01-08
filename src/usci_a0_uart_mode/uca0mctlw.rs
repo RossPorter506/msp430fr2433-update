@@ -38,8 +38,10 @@ impl From<crate::W<UCA0MCTLW_SPEC>> for W {
 pub type UCOS16_R = crate::BitReader<bool>;
 #[doc = "Field `UCOS16` writer - USCI 16-times Oversampling enable"]
 pub type UCOS16_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+#[doc = "Field `UCBRF` reader - USCI First Stage Modulation Select 3"]
+pub type UCBRF_R = crate::FieldReader<u8, UCBRF_A>;
 #[doc = "USCI First Stage Modulation Select 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCBRF_A {
     #[doc = "0: USCI First Stage Modulation: 0"]
@@ -81,8 +83,6 @@ impl From<UCBRF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCBRF` reader - USCI First Stage Modulation Select 3"]
-pub type UCBRF_R = crate::FieldReader<u8, UCBRF_A>;
 impl UCBRF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

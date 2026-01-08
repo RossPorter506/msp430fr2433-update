@@ -34,8 +34,10 @@ impl From<crate::W<UCA1CTLW1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `UCGLIT` reader - USCI Deglitch Time Bit 1"]
+pub type UCGLIT_R = crate::FieldReader<u8, UCGLIT_A>;
 #[doc = "USCI Deglitch Time Bit 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCGLIT_A {
     #[doc = "0: USCI Deglitch time: 0"]
@@ -53,8 +55,6 @@ impl From<UCGLIT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCGLIT` reader - USCI Deglitch Time Bit 1"]
-pub type UCGLIT_R = crate::FieldReader<u8, UCGLIT_A>;
 impl UCGLIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

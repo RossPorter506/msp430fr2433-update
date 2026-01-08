@@ -34,8 +34,10 @@ impl From<crate::W<UCB0CTLW1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `UCGLIT` reader - USCI Deglitch time Bit: 1"]
+pub type UCGLIT_R = crate::FieldReader<u8, UCGLIT_A>;
 #[doc = "USCI Deglitch time Bit: 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCGLIT_A {
     #[doc = "0: USCI Deglitch time: 0"]
@@ -53,8 +55,6 @@ impl From<UCGLIT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCGLIT` reader - USCI Deglitch time Bit: 1"]
-pub type UCGLIT_R = crate::FieldReader<u8, UCGLIT_A>;
 impl UCGLIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,8 +113,10 @@ impl<'a, const O: u8> UCGLIT_W<'a, O> {
         self.variant(UCGLIT_A::UCGLIT_3)
     }
 }
+#[doc = "Field `UCASTP` reader - USCI Automatic Stop condition generation Bit: 1"]
+pub type UCASTP_R = crate::FieldReader<u8, UCASTP_A>;
 #[doc = "USCI Automatic Stop condition generation Bit: 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCASTP_A {
     #[doc = "0: USCI Automatic Stop condition generation: 0"]
@@ -132,8 +134,6 @@ impl From<UCASTP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCASTP` reader - USCI Automatic Stop condition generation Bit: 1"]
-pub type UCASTP_R = crate::FieldReader<u8, UCASTP_A>;
 impl UCASTP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -200,8 +200,10 @@ pub type UCSWACK_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW1_SPEC, 
 pub type UCSTPNACK_R = crate::BitReader<bool>;
 #[doc = "Field `UCSTPNACK` writer - USCI Acknowledge Stop last byte"]
 pub type UCSTPNACK_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW1_SPEC, bool, O>;
+#[doc = "Field `UCCLTO` reader - USCI Clock low timeout Bit: 1"]
+pub type UCCLTO_R = crate::FieldReader<u8, UCCLTO_A>;
 #[doc = "USCI Clock low timeout Bit: 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCCLTO_A {
     #[doc = "0: USCI Clock low timeout: 0"]
@@ -219,8 +221,6 @@ impl From<UCCLTO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCCLTO` reader - USCI Clock low timeout Bit: 1"]
-pub type UCCLTO_R = crate::FieldReader<u8, UCCLTO_A>;
 impl UCCLTO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

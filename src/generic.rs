@@ -99,6 +99,14 @@ impl<REG: Resettable + Writable> Reg<REG> {
     ///     .field3().variant(VARIANT)
     /// );
     /// ```
+    /// or an alternative way of saying the same:
+    /// ```ignore
+    /// periph.reg.write(|w| {
+    ///     w.field1().bits(newfield1bits);
+    ///     w.field2().set_bit();
+    ///     w.field3().variant(VARIANT)
+    /// });
+    /// ```
     /// In the latter case, other fields will be set to their reset value.
     #[inline(always)]
     pub fn write<F>(&self, f: F)
@@ -122,6 +130,10 @@ where
     /// Writes 0 to a `Writable` register.
     ///
     /// Similar to `write`, but unused bits will contain 0.
+    ///
+    /// # Safety
+    ///
+    /// Unsafe to use with registers which don't allow to write 0.
     #[inline(always)]
     pub unsafe fn write_with_zero<F>(&self, f: F)
     where
@@ -153,6 +165,14 @@ impl<REG: Readable + Writable> Reg<REG> {
     ///     .field2().set_bit()
     ///     .field3().variant(VARIANT)
     /// );
+    /// ```
+    /// or an alternative way of saying the same:
+    /// ```ignore
+    /// periph.reg.modify(|_, w| {
+    ///     w.field1().bits(newfield1bits);
+    ///     w.field2().set_bit();
+    ///     w.field3().variant(VARIANT)
+    /// });
     /// ```
     /// Other fields will have the value they had before the call to `modify`.
     #[inline(always)]
@@ -216,6 +236,10 @@ pub struct W<REG: RegisterSpec + ?Sized> {
 
 impl<REG: RegisterSpec> W<REG> {
     /// Writes raw bits to the register.
+    ///
+    /// # Safety
+    ///
+    /// Read datasheet or reference manual to find what values are allowed to pass.
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: REG::Ux) -> &mut Self {
         self.bits = bits;
@@ -596,5 +620,58 @@ macro_rules! impl_proxy {
     };
 }
 
-impl_proxy!(u16);
 impl_proxy!(u8);
+impl_proxy!(u16);
+
+use msp430_atomic::AtomicOperations;
+
+impl<REG: Writable> Reg<REG>
+where
+    Self: Readable + Writable,
+    REG::Ux: AtomicOperations + Default + core::ops::Not<Output = REG::Ux>,
+{
+    /// Set high every bit in the register that was set in the write proxy. Leave other bits
+    /// untouched. The write is done in a single atomic instruction.
+    #[inline(always)]
+    pub unsafe fn set_bits<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W<REG>) -> &mut W<REG>,
+    {
+        let bits = f(&mut W {
+            bits: Default::default(),
+            _reg: marker::PhantomData,
+        })
+        .bits;
+        REG::Ux::atomic_or(self.register.as_ptr(), bits);
+    }
+
+    /// Clear every bit in the register that was cleared in the write proxy. Leave other bits
+    /// untouched. The write is done in a single atomic instruction.
+    #[inline(always)]
+    pub unsafe fn clear_bits<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W<REG>) -> &mut W<REG>,
+    {
+        let bits = f(&mut W {
+            bits: !REG::Ux::default(),
+            _reg: marker::PhantomData,
+        })
+        .bits;
+        REG::Ux::atomic_and(self.register.as_ptr(), bits);
+    }
+
+    /// Toggle every bit in the register that was set in the write proxy. Leave other bits
+    /// untouched. The write is done in a single atomic instruction.
+    #[inline(always)]
+    pub unsafe fn toggle_bits<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W<REG>) -> &mut W<REG>,
+    {
+        let bits = f(&mut W {
+            bits: Default::default(),
+            _reg: marker::PhantomData,
+        })
+        .bits;
+        REG::Ux::atomic_xor(self.register.as_ptr(), bits);
+    }
+}

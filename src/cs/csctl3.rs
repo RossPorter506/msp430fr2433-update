@@ -34,8 +34,10 @@ impl From<crate::W<CSCTL3_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FLLREFDIV` reader - Reference Divider Bit : 0"]
+pub type FLLREFDIV_R = crate::FieldReader<u8, FLLREFDIV_A>;
 #[doc = "Reference Divider Bit : 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLREFDIV_A {
     #[doc = "0: Reference Divider: f(LFCLK)/1"]
@@ -61,8 +63,6 @@ impl From<FLLREFDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FLLREFDIV` reader - Reference Divider Bit : 0"]
-pub type FLLREFDIV_R = crate::FieldReader<u8, FLLREFDIV_A>;
 impl FLLREFDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -165,8 +165,10 @@ impl<'a, const O: u8> FLLREFDIV_W<'a, O> {
         self.variant(FLLREFDIV_A::FLLREFDIV_7)
     }
 }
+#[doc = "Field `SELREF` reader - FLL Reference Clock Select Bit : 0"]
+pub type SELREF_R = crate::FieldReader<u8, SELREF_A>;
 #[doc = "FLL Reference Clock Select Bit : 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELREF_A {
     #[doc = "0: FLL Reference Clock Select 0"]
@@ -184,8 +186,6 @@ impl From<SELREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SELREF` reader - FLL Reference Clock Select Bit : 0"]
-pub type SELREF_R = crate::FieldReader<u8, SELREF_A>;
 impl SELREF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

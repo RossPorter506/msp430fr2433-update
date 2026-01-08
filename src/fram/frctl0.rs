@@ -34,8 +34,10 @@ impl From<crate::W<FRCTL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `NWAITS` reader - FRAM Wait state control Bit: 0"]
+pub type NWAITS_R = crate::FieldReader<u8, NWAITS_A>;
 #[doc = "FRAM Wait state control Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NWAITS_A {
     #[doc = "0: FRAM Wait state control: 0"]
@@ -61,8 +63,6 @@ impl From<NWAITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NWAITS` reader - FRAM Wait state control Bit: 0"]
-pub type NWAITS_R = crate::FieldReader<u8, NWAITS_A>;
 impl NWAITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -165,57 +165,57 @@ impl<'a, const O: u8> NWAITS_W<'a, O> {
         self.variant(NWAITS_A::NWAITS_7)
     }
 }
+#[doc = "Field `FRCTLPW` reader - FRCTLPW Password"]
+pub type FRCTLPW_R = crate::FieldReader<u8, FRCTLPWR_A>;
 #[doc = "FRCTLPW Password\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FRCTLPW_A {
+pub enum FRCTLPWR_A {
     #[doc = "150: Value always reads from the FRCTL0 register"]
     PASSWORD = 150,
 }
-impl From<FRCTLPW_A> for u8 {
+impl From<FRCTLPWR_A> for u8 {
     #[inline(always)]
-    fn from(variant: FRCTLPW_A) -> Self {
+    fn from(variant: FRCTLPWR_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `FRCTLPW` reader - FRCTLPW Password"]
-pub type FRCTLPW_R = crate::FieldReader<u8, FRCTLPW_A>;
 impl FRCTLPW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FRCTLPW_A> {
+    pub fn variant(&self) -> Option<FRCTLPWR_A> {
         match self.bits {
-            150 => Some(FRCTLPW_A::PASSWORD),
+            150 => Some(FRCTLPWR_A::PASSWORD),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PASSWORD`"]
     #[inline(always)]
     pub fn is_password(&self) -> bool {
-        *self == FRCTLPW_A::PASSWORD
+        *self == FRCTLPWR_A::PASSWORD
     }
 }
 #[doc = "FRCTLPW Password\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FRCTLPW_AW {
+pub enum FRCTLPWW_AW {
     #[doc = "165: Value which must be written to the FRCTL0 register"]
     PASSWORD = 165,
 }
-impl From<FRCTLPW_AW> for u8 {
+impl From<FRCTLPWW_AW> for u8 {
     #[inline(always)]
-    fn from(variant: FRCTLPW_AW) -> Self {
+    fn from(variant: FRCTLPWW_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `FRCTLPW` writer - FRCTLPW Password"]
 pub type FRCTLPW_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u16, FRCTL0_SPEC, u8, FRCTLPW_AW, 8, O>;
+    crate::FieldWriter<'a, u16, FRCTL0_SPEC, u8, FRCTLPWW_AW, 8, O>;
 impl<'a, const O: u8> FRCTLPW_W<'a, O> {
     #[doc = "Value which must be written to the FRCTL0 register"]
     #[inline(always)]
     pub fn password(self) -> &'a mut W {
-        self.variant(FRCTLPW_AW::PASSWORD)
+        self.variant(FRCTLPWW_AW::PASSWORD)
     }
 }
 impl R {

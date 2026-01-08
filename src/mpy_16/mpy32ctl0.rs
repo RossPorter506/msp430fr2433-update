@@ -46,8 +46,10 @@ pub type MPYFRAC_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, 
 pub type MPYSAT_R = crate::BitReader<bool>;
 #[doc = "Field `MPYSAT` writer - Saturation mode"]
 pub type MPYSAT_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+#[doc = "Field `MPYM` reader - Multiplier mode Bit:0"]
+pub type MPYM_R = crate::FieldReader<u8, MPYM_A>;
 #[doc = "Multiplier mode Bit:0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MPYM_A {
     #[doc = "0: Multiplier mode: MPY"]
@@ -65,8 +67,6 @@ impl From<MPYM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MPYM` reader - Multiplier mode Bit:0"]
-pub type MPYM_R = crate::FieldReader<u8, MPYM_A>;
 impl MPYM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

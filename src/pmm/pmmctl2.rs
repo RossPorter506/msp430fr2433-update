@@ -46,36 +46,10 @@ pub type EXTREFEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, b
 pub type TSENSOREN_R = crate::BitReader<bool>;
 #[doc = "Field `TSENSOREN` writer - Temperature Sensor Enable"]
 pub type TSENSOREN_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `REFGENACT` reader - REF Reference generator active"]
-pub type REFGENACT_R = crate::BitReader<bool>;
-#[doc = "Field `REFGENACT` writer - REF Reference generator active"]
-pub type REFGENACT_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `REFBGACT` reader - REF Reference bandgap active"]
-pub type REFBGACT_R = crate::BitReader<bool>;
-#[doc = "Field `REFBGACT` writer - REF Reference bandgap active"]
-pub type REFBGACT_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `BGMODE` reader - REF Bandgap mode"]
-pub type BGMODE_R = crate::BitReader<bool>;
-#[doc = "Field `BGMODE` writer - REF Bandgap mode"]
-pub type BGMODE_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `REFGENRDY` reader - REF Reference generator ready"]
-pub type REFGENRDY_R = crate::BitReader<bool>;
-#[doc = "Field `REFGENRDY` writer - REF Reference generator ready"]
-pub type REFGENRDY_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `REFBGRDY` reader - REF Reference bandgap ready"]
-pub type REFBGRDY_R = crate::BitReader<bool>;
-#[doc = "Field `REFBGRDY` writer - REF Reference bandgap ready"]
-pub type REFBGRDY_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `REFGEN` reader - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
-pub type REFGEN_R = crate::BitReader<bool>;
-#[doc = "Field `REFGEN` writer - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
-pub type REFGEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
-#[doc = "Field `REFBGEN` reader - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
-pub type REFBGEN_R = crate::BitReader<bool>;
-#[doc = "Field `REFBGEN` writer - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
-pub type REFBGEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `REFVSEL` reader - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
+pub type REFVSEL_R = crate::FieldReader<u8, REFVSEL_A>;
 #[doc = "Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REFVSEL_A {
     #[doc = "0: 00b = 1.5V"]
@@ -93,8 +67,6 @@ impl From<REFVSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REFVSEL` reader - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
-pub type REFVSEL_R = crate::FieldReader<u8, REFVSEL_A>;
 impl REFVSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -153,6 +125,34 @@ impl<'a, const O: u8> REFVSEL_W<'a, O> {
         self.variant(REFVSEL_A::REFVSEL_3)
     }
 }
+#[doc = "Field `REFGEN` reader - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
+pub type REFGEN_R = crate::BitReader<bool>;
+#[doc = "Field `REFGEN` writer - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
+pub type REFGEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `REFBGEN` reader - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
+pub type REFBGEN_R = crate::BitReader<bool>;
+#[doc = "Field `REFBGEN` writer - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
+pub type REFBGEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `REFGENACT` reader - REF Reference generator active"]
+pub type REFGENACT_R = crate::BitReader<bool>;
+#[doc = "Field `REFGENACT` writer - REF Reference generator active"]
+pub type REFGENACT_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `REFBGACT` reader - REF Reference bandgap active"]
+pub type REFBGACT_R = crate::BitReader<bool>;
+#[doc = "Field `REFBGACT` writer - REF Reference bandgap active"]
+pub type REFBGACT_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `BGMODE` reader - REF Bandgap mode"]
+pub type BGMODE_R = crate::BitReader<bool>;
+#[doc = "Field `BGMODE` writer - REF Bandgap mode"]
+pub type BGMODE_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `REFGENRDY` reader - REF Reference generator ready"]
+pub type REFGENRDY_R = crate::BitReader<bool>;
+#[doc = "Field `REFGENRDY` writer - REF Reference generator ready"]
+pub type REFGENRDY_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
+#[doc = "Field `REFBGRDY` reader - REF Reference bandgap ready"]
+pub type REFBGRDY_R = crate::BitReader<bool>;
+#[doc = "Field `REFBGRDY` writer - REF Reference bandgap ready"]
+pub type REFBGRDY_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL2_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Internal Reference Enable"]
     #[inline(always)]
@@ -168,6 +168,21 @@ impl R {
     #[inline(always)]
     pub fn tsensoren(&self) -> TSENSOREN_R {
         TSENSOREN_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bits 4:5 - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
+    #[inline(always)]
+    pub fn refvsel(&self) -> REFVSEL_R {
+        REFVSEL_R::new(((self.bits >> 4) & 3) as u8)
+    }
+    #[doc = "Bit 6 - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
+    #[inline(always)]
+    pub fn refgen(&self) -> REFGEN_R {
+        REFGEN_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
+    #[inline(always)]
+    pub fn refbgen(&self) -> REFBGEN_R {
+        REFBGEN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - REF Reference generator active"]
     #[inline(always)]
@@ -194,21 +209,6 @@ impl R {
     pub fn refbgrdy(&self) -> REFBGRDY_R {
         REFBGRDY_R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 6 - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
-    #[inline(always)]
-    pub fn refgen(&self) -> REFGEN_R {
-        REFGEN_R::new(((self.bits >> 6) & 1) != 0)
-    }
-    #[doc = "Bit 7 - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
-    #[inline(always)]
-    pub fn refbgen(&self) -> REFBGEN_R {
-        REFBGEN_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 4:5 - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
-    #[inline(always)]
-    pub fn refvsel(&self) -> REFVSEL_R {
-        REFVSEL_R::new(((self.bits >> 4) & 3) as u8)
-    }
 }
 impl W {
     #[doc = "Bit 0 - Internal Reference Enable"]
@@ -225,6 +225,21 @@ impl W {
     #[inline(always)]
     pub fn tsensoren(&mut self) -> TSENSOREN_W<3> {
         TSENSOREN_W::new(self)
+    }
+    #[doc = "Bits 4:5 - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
+    #[inline(always)]
+    pub fn refvsel(&mut self) -> REFVSEL_W<4> {
+        REFVSEL_W::new(self)
+    }
+    #[doc = "Bit 6 - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
+    #[inline(always)]
+    pub fn refgen(&mut self) -> REFGEN_W<6> {
+        REFGEN_W::new(self)
+    }
+    #[doc = "Bit 7 - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
+    #[inline(always)]
+    pub fn refbgen(&mut self) -> REFBGEN_W<7> {
+        REFBGEN_W::new(self)
     }
     #[doc = "Bit 8 - REF Reference generator active"]
     #[inline(always)]
@@ -250,21 +265,6 @@ impl W {
     #[inline(always)]
     pub fn refbgrdy(&mut self) -> REFBGRDY_W<13> {
         REFBGRDY_W::new(self)
-    }
-    #[doc = "Bit 6 - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]
-    #[inline(always)]
-    pub fn refgen(&mut self) -> REFGEN_W<6> {
-        REFGEN_W::new(self)
-    }
-    #[doc = "Bit 7 - Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0."]
-    #[inline(always)]
-    pub fn refbgen(&mut self) -> REFBGEN_W<7> {
-        REFBGEN_W::new(self)
-    }
-    #[doc = "Bits 4:5 - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
-    #[inline(always)]
-    pub fn refvsel(&mut self) -> REFVSEL_W<4> {
-        REFVSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

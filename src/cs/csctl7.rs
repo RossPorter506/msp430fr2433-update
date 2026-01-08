@@ -50,8 +50,10 @@ pub type FLLULIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, bo
 pub type ENSTFCNT1_R = crate::BitReader<bool>;
 #[doc = "Field `ENSTFCNT1` writer - Enable start counter for XT1"]
 pub type ENSTFCNT1_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, bool, O>;
+#[doc = "Field `FLLUNLOCK` reader - FLL unlock condition Bit: 0"]
+pub type FLLUNLOCK_R = crate::FieldReader<u8, FLLUNLOCK_A>;
 #[doc = "FLL unlock condition Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLUNLOCK_A {
     #[doc = "0: FLL unlock condition: 0"]
@@ -69,8 +71,6 @@ impl From<FLLUNLOCK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FLLUNLOCK` reader - FLL unlock condition Bit: 0"]
-pub type FLLUNLOCK_R = crate::FieldReader<u8, FLLUNLOCK_A>;
 impl FLLUNLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -129,8 +129,10 @@ impl<'a, const O: u8> FLLUNLOCK_W<'a, O> {
         self.variant(FLLUNLOCK_A::FLLUNLOCK_3)
     }
 }
+#[doc = "Field `FLLUNLOCKHIS` reader - Unlock history Bit: 0"]
+pub type FLLUNLOCKHIS_R = crate::FieldReader<u8, FLLUNLOCKHIS_A>;
 #[doc = "Unlock history Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLUNLOCKHIS_A {
     #[doc = "0: Unlock history: 0"]
@@ -148,8 +150,6 @@ impl From<FLLUNLOCKHIS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FLLUNLOCKHIS` reader - Unlock history Bit: 0"]
-pub type FLLUNLOCKHIS_R = crate::FieldReader<u8, FLLUNLOCKHIS_A>;
 impl FLLUNLOCKHIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

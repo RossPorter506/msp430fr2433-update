@@ -34,8 +34,10 @@ impl From<crate::W<TA2EX0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TAIDEX` reader - Timer A Input divider expansion Bit: 0"]
+pub type TAIDEX_R = crate::FieldReader<u8, TAIDEX_A>;
 #[doc = "Timer A Input divider expansion Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TAIDEX_A {
     #[doc = "0: Timer A Input divider expansion : /1"]
@@ -61,8 +63,6 @@ impl From<TAIDEX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TAIDEX` reader - Timer A Input divider expansion Bit: 0"]
-pub type TAIDEX_R = crate::FieldReader<u8, TAIDEX_A>;
 impl TAIDEX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

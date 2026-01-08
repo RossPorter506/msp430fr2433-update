@@ -38,8 +38,10 @@ impl From<crate::W<ADCCTL1_SPEC>> for W {
 pub type ADCBUSY_R = crate::BitReader<bool>;
 #[doc = "Field `ADCBUSY` writer - ADC Busy"]
 pub type ADCBUSY_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL1_SPEC, bool, O>;
+#[doc = "Field `ADCCONSEQ` reader - ADC Conversion Sequence Select 0"]
+pub type ADCCONSEQ_R = crate::FieldReader<u8, ADCCONSEQ_A>;
 #[doc = "ADC Conversion Sequence Select 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCCONSEQ_A {
     #[doc = "0: ADC Conversion Sequence Select: 0"]
@@ -57,8 +59,6 @@ impl From<ADCCONSEQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCCONSEQ` reader - ADC Conversion Sequence Select 0"]
-pub type ADCCONSEQ_R = crate::FieldReader<u8, ADCCONSEQ_A>;
 impl ADCCONSEQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -117,8 +117,10 @@ impl<'a, const O: u8> ADCCONSEQ_W<'a, O> {
         self.variant(ADCCONSEQ_A::ADCCONSEQ_3)
     }
 }
+#[doc = "Field `ADCSSEL` reader - ADC Clock Source Select 0"]
+pub type ADCSSEL_R = crate::FieldReader<u8, ADCSSEL_A>;
 #[doc = "ADC Clock Source Select 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSSEL_A {
     #[doc = "0: ADC Clock Source Select: 0"]
@@ -136,8 +138,6 @@ impl From<ADCSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCSSEL` reader - ADC Clock Source Select 0"]
-pub type ADCSSEL_R = crate::FieldReader<u8, ADCSSEL_A>;
 impl ADCSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -196,8 +196,10 @@ impl<'a, const O: u8> ADCSSEL_W<'a, O> {
         self.variant(ADCSSEL_A::ADCSSEL_3)
     }
 }
+#[doc = "Field `ADCDIV` reader - ADC Clock Divider Select 0"]
+pub type ADCDIV_R = crate::FieldReader<u8, ADCDIV_A>;
 #[doc = "ADC Clock Divider Select 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCDIV_A {
     #[doc = "0: ADC Clock Divider Select: 0"]
@@ -223,8 +225,6 @@ impl From<ADCDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCDIV` reader - ADC Clock Divider Select 0"]
-pub type ADCDIV_R = crate::FieldReader<u8, ADCDIV_A>;
 impl ADCDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -335,8 +335,10 @@ pub type ADCISSH_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL1_SPEC, bo
 pub type ADCSHP_R = crate::BitReader<bool>;
 #[doc = "Field `ADCSHP` writer - ADC Sample/Hold Pulse Mode"]
 pub type ADCSHP_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL1_SPEC, bool, O>;
+#[doc = "Field `ADCSHS` reader - ADC Sample/Hold Source 0"]
+pub type ADCSHS_R = crate::FieldReader<u8, ADCSHS_A>;
 #[doc = "ADC Sample/Hold Source 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSHS_A {
     #[doc = "0: ADC Sample/Hold Source: 0"]
@@ -354,8 +356,6 @@ impl From<ADCSHS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCSHS` reader - ADC Sample/Hold Source 0"]
-pub type ADCSHS_R = crate::FieldReader<u8, ADCSHS_A>;
 impl ADCSHS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
