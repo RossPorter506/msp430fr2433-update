@@ -34,10 +34,10 @@ impl From<crate::W<RTCCTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RTCIF` reader - Low-Power-Counter Interrupt Flag"]
-pub type RTCIF_R = crate::BitReader<bool>;
-#[doc = "Field `RTCIF` writer - Low-Power-Counter Interrupt Flag"]
-pub type RTCIF_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCCTL_SPEC, bool, O>;
+#[doc = "Field `RTCIFG` reader - Low-Power-Counter Interrupt Flag"]
+pub type RTCIFG_R = crate::BitReader<bool>;
+#[doc = "Field `RTCIFG` writer - Low-Power-Counter Interrupt Flag"]
+pub type RTCIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCCTL_SPEC, bool, O>;
 #[doc = "Field `RTCIE` reader - Low-Power-Counter Interrupt Enable"]
 pub type RTCIE_R = crate::BitReader<bool>;
 #[doc = "Field `RTCIE` writer - Low-Power-Counter Interrupt Enable"]
@@ -257,8 +257,8 @@ impl<'a, const O: u8> RTCSS_W<'a, O> {
 impl R {
     #[doc = "Bit 0 - Low-Power-Counter Interrupt Flag"]
     #[inline(always)]
-    pub fn rtcif(&self) -> RTCIF_R {
-        RTCIF_R::new((self.bits & 1) != 0)
+    pub fn rtcifg(&self) -> RTCIFG_R {
+        RTCIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Low-Power-Counter Interrupt Enable"]
     #[inline(always)]
@@ -284,8 +284,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Low-Power-Counter Interrupt Flag"]
     #[inline(always)]
-    pub fn rtcif(&mut self) -> RTCIF_W<0> {
-        RTCIF_W::new(self)
+    pub fn rtcifg(&mut self) -> RTCIFG_W<0> {
+        RTCIFG_W::new(self)
     }
     #[doc = "Bit 1 - Low-Power-Counter Interrupt Enable"]
     #[inline(always)]
