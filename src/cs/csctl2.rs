@@ -34,46 +34,10 @@ impl From<crate::W<CSCTL2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FLLN0` reader - FLL Multipier Bit : 0"]
-pub type FLLN0_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN0` writer - FLL Multipier Bit : 0"]
-pub type FLLN0_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN1` reader - FLL Multipier Bit : 1"]
-pub type FLLN1_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN1` writer - FLL Multipier Bit : 1"]
-pub type FLLN1_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN2` reader - FLL Multipier Bit : 2"]
-pub type FLLN2_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN2` writer - FLL Multipier Bit : 2"]
-pub type FLLN2_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN3` reader - FLL Multipier Bit : 3"]
-pub type FLLN3_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN3` writer - FLL Multipier Bit : 3"]
-pub type FLLN3_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN4` reader - FLL Multipier Bit : 4"]
-pub type FLLN4_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN4` writer - FLL Multipier Bit : 4"]
-pub type FLLN4_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN5` reader - FLL Multipier Bit : 5"]
-pub type FLLN5_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN5` writer - FLL Multipier Bit : 5"]
-pub type FLLN5_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN6` reader - FLL Multipier Bit : 6"]
-pub type FLLN6_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN6` writer - FLL Multipier Bit : 6"]
-pub type FLLN6_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN7` reader - FLL Multipier Bit : 7"]
-pub type FLLN7_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN7` writer - FLL Multipier Bit : 7"]
-pub type FLLN7_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN8` reader - FLL Multipier Bit : 8"]
-pub type FLLN8_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN8` writer - FLL Multipier Bit : 8"]
-pub type FLLN8_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
-#[doc = "Field `FLLN9` reader - FLL Multipier Bit : 9"]
-pub type FLLN9_R = crate::BitReader<bool>;
-#[doc = "Field `FLLN9` writer - FLL Multipier Bit : 9"]
-pub type FLLN9_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL2_SPEC, bool, O>;
+#[doc = "Field `FLLN` reader - FLL Multipier Bit : 0"]
+pub type FLLN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `FLLN` writer - FLL Multipier Bit : 0"]
+pub type FLLN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL2_SPEC, u16, u16, 10, O>;
 #[doc = "Field `FLLD` reader - Loop Divider Bit : 0"]
 pub type FLLD_R = crate::FieldReader<u8, FLLD_A>;
 #[doc = "Loop Divider Bit : 0\n\nValue on reset: 0"]
@@ -179,55 +143,10 @@ impl<'a, const O: u8> FLLD_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - FLL Multipier Bit : 0"]
+    #[doc = "Bits 0:9 - FLL Multipier Bit : 0"]
     #[inline(always)]
-    pub fn flln0(&self) -> FLLN0_R {
-        FLLN0_R::new((self.bits & 1) != 0)
-    }
-    #[doc = "Bit 1 - FLL Multipier Bit : 1"]
-    #[inline(always)]
-    pub fn flln1(&self) -> FLLN1_R {
-        FLLN1_R::new(((self.bits >> 1) & 1) != 0)
-    }
-    #[doc = "Bit 2 - FLL Multipier Bit : 2"]
-    #[inline(always)]
-    pub fn flln2(&self) -> FLLN2_R {
-        FLLN2_R::new(((self.bits >> 2) & 1) != 0)
-    }
-    #[doc = "Bit 3 - FLL Multipier Bit : 3"]
-    #[inline(always)]
-    pub fn flln3(&self) -> FLLN3_R {
-        FLLN3_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 4 - FLL Multipier Bit : 4"]
-    #[inline(always)]
-    pub fn flln4(&self) -> FLLN4_R {
-        FLLN4_R::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bit 5 - FLL Multipier Bit : 5"]
-    #[inline(always)]
-    pub fn flln5(&self) -> FLLN5_R {
-        FLLN5_R::new(((self.bits >> 5) & 1) != 0)
-    }
-    #[doc = "Bit 6 - FLL Multipier Bit : 6"]
-    #[inline(always)]
-    pub fn flln6(&self) -> FLLN6_R {
-        FLLN6_R::new(((self.bits >> 6) & 1) != 0)
-    }
-    #[doc = "Bit 7 - FLL Multipier Bit : 7"]
-    #[inline(always)]
-    pub fn flln7(&self) -> FLLN7_R {
-        FLLN7_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 8 - FLL Multipier Bit : 8"]
-    #[inline(always)]
-    pub fn flln8(&self) -> FLLN8_R {
-        FLLN8_R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 9 - FLL Multipier Bit : 9"]
-    #[inline(always)]
-    pub fn flln9(&self) -> FLLN9_R {
-        FLLN9_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn flln(&self) -> FLLN_R {
+        FLLN_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bits 12:14 - Loop Divider Bit : 0"]
     #[inline(always)]
@@ -236,55 +155,10 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - FLL Multipier Bit : 0"]
+    #[doc = "Bits 0:9 - FLL Multipier Bit : 0"]
     #[inline(always)]
-    pub fn flln0(&mut self) -> FLLN0_W<0> {
-        FLLN0_W::new(self)
-    }
-    #[doc = "Bit 1 - FLL Multipier Bit : 1"]
-    #[inline(always)]
-    pub fn flln1(&mut self) -> FLLN1_W<1> {
-        FLLN1_W::new(self)
-    }
-    #[doc = "Bit 2 - FLL Multipier Bit : 2"]
-    #[inline(always)]
-    pub fn flln2(&mut self) -> FLLN2_W<2> {
-        FLLN2_W::new(self)
-    }
-    #[doc = "Bit 3 - FLL Multipier Bit : 3"]
-    #[inline(always)]
-    pub fn flln3(&mut self) -> FLLN3_W<3> {
-        FLLN3_W::new(self)
-    }
-    #[doc = "Bit 4 - FLL Multipier Bit : 4"]
-    #[inline(always)]
-    pub fn flln4(&mut self) -> FLLN4_W<4> {
-        FLLN4_W::new(self)
-    }
-    #[doc = "Bit 5 - FLL Multipier Bit : 5"]
-    #[inline(always)]
-    pub fn flln5(&mut self) -> FLLN5_W<5> {
-        FLLN5_W::new(self)
-    }
-    #[doc = "Bit 6 - FLL Multipier Bit : 6"]
-    #[inline(always)]
-    pub fn flln6(&mut self) -> FLLN6_W<6> {
-        FLLN6_W::new(self)
-    }
-    #[doc = "Bit 7 - FLL Multipier Bit : 7"]
-    #[inline(always)]
-    pub fn flln7(&mut self) -> FLLN7_W<7> {
-        FLLN7_W::new(self)
-    }
-    #[doc = "Bit 8 - FLL Multipier Bit : 8"]
-    #[inline(always)]
-    pub fn flln8(&mut self) -> FLLN8_W<8> {
-        FLLN8_W::new(self)
-    }
-    #[doc = "Bit 9 - FLL Multipier Bit : 9"]
-    #[inline(always)]
-    pub fn flln9(&mut self) -> FLLN9_W<9> {
-        FLLN9_W::new(self)
+    pub fn flln(&mut self) -> FLLN_W<0> {
+        FLLN_W::new(self)
     }
     #[doc = "Bits 12:14 - Loop Divider Bit : 0"]
     #[inline(always)]
