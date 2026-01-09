@@ -80,22 +80,18 @@ pub type FLLD_R = crate::FieldReader<u8, FLLD_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLD_A {
-    #[doc = "0: Multiply Selected Loop Freq. By 1"]
-    FLLD_0 = 0,
-    #[doc = "1: Multiply Selected Loop Freq. By 2"]
-    FLLD_1 = 1,
-    #[doc = "2: Multiply Selected Loop Freq. By 4"]
-    FLLD_2 = 2,
-    #[doc = "3: Multiply Selected Loop Freq. By 8"]
-    FLLD_3 = 3,
-    #[doc = "4: Multiply Selected Loop Freq. By 16"]
-    FLLD_4 = 4,
-    #[doc = "5: Multiply Selected Loop Freq. By 32"]
-    FLLD_5 = 5,
-    #[doc = "6: Reserved"]
-    FLLD_6 = 6,
-    #[doc = "7: Reserved"]
-    FLLD_7 = 7,
+    #[doc = "0: Multiply selected loop frequency by 1"]
+    _1 = 0,
+    #[doc = "1: Multiply selected loop frequency by 2"]
+    _2 = 1,
+    #[doc = "2: Multiply selected loop frequency by 4"]
+    _4 = 2,
+    #[doc = "3: Multiply selected loop frequency by 8"]
+    _8 = 3,
+    #[doc = "4: Multiply selected loop frequency by 16"]
+    _16 = 4,
+    #[doc = "5: Multiply selected loop frequency by 32"]
+    _32 = 5,
 }
 impl From<FLLD_A> for u8 {
     #[inline(always)]
@@ -106,102 +102,80 @@ impl From<FLLD_A> for u8 {
 impl FLLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLLD_A {
+    pub fn variant(&self) -> Option<FLLD_A> {
         match self.bits {
-            0 => FLLD_A::FLLD_0,
-            1 => FLLD_A::FLLD_1,
-            2 => FLLD_A::FLLD_2,
-            3 => FLLD_A::FLLD_3,
-            4 => FLLD_A::FLLD_4,
-            5 => FLLD_A::FLLD_5,
-            6 => FLLD_A::FLLD_6,
-            7 => FLLD_A::FLLD_7,
-            _ => unreachable!(),
+            0 => Some(FLLD_A::_1),
+            1 => Some(FLLD_A::_2),
+            2 => Some(FLLD_A::_4),
+            3 => Some(FLLD_A::_8),
+            4 => Some(FLLD_A::_16),
+            5 => Some(FLLD_A::_32),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `FLLD_0`"]
+    #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
-    pub fn is_flld_0(&self) -> bool {
-        *self == FLLD_A::FLLD_0
+    pub fn is_1(&self) -> bool {
+        *self == FLLD_A::_1
     }
-    #[doc = "Checks if the value of the field is `FLLD_1`"]
+    #[doc = "Checks if the value of the field is `_2`"]
     #[inline(always)]
-    pub fn is_flld_1(&self) -> bool {
-        *self == FLLD_A::FLLD_1
+    pub fn is_2(&self) -> bool {
+        *self == FLLD_A::_2
     }
-    #[doc = "Checks if the value of the field is `FLLD_2`"]
+    #[doc = "Checks if the value of the field is `_4`"]
     #[inline(always)]
-    pub fn is_flld_2(&self) -> bool {
-        *self == FLLD_A::FLLD_2
+    pub fn is_4(&self) -> bool {
+        *self == FLLD_A::_4
     }
-    #[doc = "Checks if the value of the field is `FLLD_3`"]
+    #[doc = "Checks if the value of the field is `_8`"]
     #[inline(always)]
-    pub fn is_flld_3(&self) -> bool {
-        *self == FLLD_A::FLLD_3
+    pub fn is_8(&self) -> bool {
+        *self == FLLD_A::_8
     }
-    #[doc = "Checks if the value of the field is `FLLD_4`"]
+    #[doc = "Checks if the value of the field is `_16`"]
     #[inline(always)]
-    pub fn is_flld_4(&self) -> bool {
-        *self == FLLD_A::FLLD_4
+    pub fn is_16(&self) -> bool {
+        *self == FLLD_A::_16
     }
-    #[doc = "Checks if the value of the field is `FLLD_5`"]
+    #[doc = "Checks if the value of the field is `_32`"]
     #[inline(always)]
-    pub fn is_flld_5(&self) -> bool {
-        *self == FLLD_A::FLLD_5
-    }
-    #[doc = "Checks if the value of the field is `FLLD_6`"]
-    #[inline(always)]
-    pub fn is_flld_6(&self) -> bool {
-        *self == FLLD_A::FLLD_6
-    }
-    #[doc = "Checks if the value of the field is `FLLD_7`"]
-    #[inline(always)]
-    pub fn is_flld_7(&self) -> bool {
-        *self == FLLD_A::FLLD_7
+    pub fn is_32(&self) -> bool {
+        *self == FLLD_A::_32
     }
 }
 #[doc = "Field `FLLD` writer - Loop Divider Bit : 0"]
-pub type FLLD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL2_SPEC, u8, FLLD_A, 3, O>;
+pub type FLLD_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL2_SPEC, u8, FLLD_A, 3, O>;
 impl<'a, const O: u8> FLLD_W<'a, O> {
-    #[doc = "Multiply Selected Loop Freq. By 1"]
+    #[doc = "Multiply selected loop frequency by 1"]
     #[inline(always)]
-    pub fn flld_0(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_0)
+    pub fn _1(self) -> &'a mut W {
+        self.variant(FLLD_A::_1)
     }
-    #[doc = "Multiply Selected Loop Freq. By 2"]
+    #[doc = "Multiply selected loop frequency by 2"]
     #[inline(always)]
-    pub fn flld_1(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_1)
+    pub fn _2(self) -> &'a mut W {
+        self.variant(FLLD_A::_2)
     }
-    #[doc = "Multiply Selected Loop Freq. By 4"]
+    #[doc = "Multiply selected loop frequency by 4"]
     #[inline(always)]
-    pub fn flld_2(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_2)
+    pub fn _4(self) -> &'a mut W {
+        self.variant(FLLD_A::_4)
     }
-    #[doc = "Multiply Selected Loop Freq. By 8"]
+    #[doc = "Multiply selected loop frequency by 8"]
     #[inline(always)]
-    pub fn flld_3(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_3)
+    pub fn _8(self) -> &'a mut W {
+        self.variant(FLLD_A::_8)
     }
-    #[doc = "Multiply Selected Loop Freq. By 16"]
+    #[doc = "Multiply selected loop frequency by 16"]
     #[inline(always)]
-    pub fn flld_4(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_4)
+    pub fn _16(self) -> &'a mut W {
+        self.variant(FLLD_A::_16)
     }
-    #[doc = "Multiply Selected Loop Freq. By 32"]
+    #[doc = "Multiply selected loop frequency by 32"]
     #[inline(always)]
-    pub fn flld_5(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_5)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn flld_6(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_6)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn flld_7(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_7)
+    pub fn _32(self) -> &'a mut W {
+        self.variant(FLLD_A::_32)
     }
 }
 impl R {

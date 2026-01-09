@@ -47,9 +47,55 @@ pub type PMMREGOFF_R = crate::BitReader<bool>;
 #[doc = "Field `PMMREGOFF` writer - PMM Turn Regulator off"]
 pub type PMMREGOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL0_SPEC, bool, O>;
 #[doc = "Field `SVSHE` reader - SVS high side enable"]
-pub type SVSHE_R = crate::BitReader<bool>;
+pub type SVSHE_R = crate::BitReader<SVSHE_A>;
+#[doc = "SVS high side enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SVSHE_A {
+    #[doc = "0: High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1."]
+    DISABLED = 0,
+    #[doc = "1: SVSH is always enabled."]
+    ENABLED = 1,
+}
+impl From<SVSHE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SVSHE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SVSHE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SVSHE_A {
+        match self.bits {
+            false => SVSHE_A::DISABLED,
+            true => SVSHE_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SVSHE_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SVSHE_A::ENABLED
+    }
+}
 #[doc = "Field `SVSHE` writer - SVS high side enable"]
-pub type SVSHE_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL0_SPEC, bool, O>;
+pub type SVSHE_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMCTL0_SPEC, SVSHE_A, O>;
+impl<'a, const O: u8> SVSHE_W<'a, O> {
+    #[doc = "High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SVSHE_A::DISABLED)
+    }
+    #[doc = "SVSH is always enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SVSHE_A::ENABLED)
+    }
+}
 #[doc = "Field `PMMPW` reader - PMM Password"]
 pub type PMMPW_R = crate::FieldReader<u8, PMMPWR_A>;
 #[doc = "PMM Password\n\nValue on reset: 0"]

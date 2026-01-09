@@ -171,14 +171,10 @@ pub type SELREF_R = crate::FieldReader<u8, SELREF_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELREF_A {
-    #[doc = "0: FLL Reference Clock Select 0"]
-    SELREF_0 = 0,
-    #[doc = "1: FLL Reference Clock Select 1"]
-    SELREF_1 = 1,
-    #[doc = "2: FLL Reference Clock Select 2"]
-    SELREF_2 = 2,
-    #[doc = "3: FLL Reference Clock Select 3"]
-    SELREF_3 = 3,
+    #[doc = "0: XT1CLK"]
+    XT1CLK = 0,
+    #[doc = "1: REFOCLK"]
+    REFOCLK = 1,
 }
 impl From<SELREF_A> for u8 {
     #[inline(always)]
@@ -189,59 +185,36 @@ impl From<SELREF_A> for u8 {
 impl SELREF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELREF_A {
+    pub fn variant(&self) -> Option<SELREF_A> {
         match self.bits {
-            0 => SELREF_A::SELREF_0,
-            1 => SELREF_A::SELREF_1,
-            2 => SELREF_A::SELREF_2,
-            3 => SELREF_A::SELREF_3,
-            _ => unreachable!(),
+            0 => Some(SELREF_A::XT1CLK),
+            1 => Some(SELREF_A::REFOCLK),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SELREF_0`"]
+    #[doc = "Checks if the value of the field is `XT1CLK`"]
     #[inline(always)]
-    pub fn is_selref_0(&self) -> bool {
-        *self == SELREF_A::SELREF_0
+    pub fn is_xt1clk(&self) -> bool {
+        *self == SELREF_A::XT1CLK
     }
-    #[doc = "Checks if the value of the field is `SELREF_1`"]
+    #[doc = "Checks if the value of the field is `REFOCLK`"]
     #[inline(always)]
-    pub fn is_selref_1(&self) -> bool {
-        *self == SELREF_A::SELREF_1
-    }
-    #[doc = "Checks if the value of the field is `SELREF_2`"]
-    #[inline(always)]
-    pub fn is_selref_2(&self) -> bool {
-        *self == SELREF_A::SELREF_2
-    }
-    #[doc = "Checks if the value of the field is `SELREF_3`"]
-    #[inline(always)]
-    pub fn is_selref_3(&self) -> bool {
-        *self == SELREF_A::SELREF_3
+    pub fn is_refoclk(&self) -> bool {
+        *self == SELREF_A::REFOCLK
     }
 }
 #[doc = "Field `SELREF` writer - FLL Reference Clock Select Bit : 0"]
-pub type SELREF_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, CSCTL3_SPEC, u8, SELREF_A, 2, O>;
+pub type SELREF_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL3_SPEC, u8, SELREF_A, 2, O>;
 impl<'a, const O: u8> SELREF_W<'a, O> {
-    #[doc = "FLL Reference Clock Select 0"]
+    #[doc = "XT1CLK"]
     #[inline(always)]
-    pub fn selref_0(self) -> &'a mut W {
-        self.variant(SELREF_A::SELREF_0)
+    pub fn xt1clk(self) -> &'a mut W {
+        self.variant(SELREF_A::XT1CLK)
     }
-    #[doc = "FLL Reference Clock Select 1"]
+    #[doc = "REFOCLK"]
     #[inline(always)]
-    pub fn selref_1(self) -> &'a mut W {
-        self.variant(SELREF_A::SELREF_1)
-    }
-    #[doc = "FLL Reference Clock Select 2"]
-    #[inline(always)]
-    pub fn selref_2(self) -> &'a mut W {
-        self.variant(SELREF_A::SELREF_2)
-    }
-    #[doc = "FLL Reference Clock Select 3"]
-    #[inline(always)]
-    pub fn selref_3(self) -> &'a mut W {
-        self.variant(SELREF_A::SELREF_3)
+    pub fn refoclk(self) -> &'a mut W {
+        self.variant(SELREF_A::REFOCLK)
     }
 }
 impl R {

@@ -40,22 +40,22 @@ pub type DIVM_R = crate::FieldReader<u8, DIVM_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVM_A {
-    #[doc = "0: MCLK Source Divider 0"]
-    DIVM_0 = 0,
-    #[doc = "1: MCLK Source Divider 1"]
-    DIVM_1 = 1,
-    #[doc = "2: MCLK Source Divider 2"]
-    DIVM_2 = 2,
-    #[doc = "3: MCLK Source Divider 3"]
-    DIVM_3 = 3,
-    #[doc = "4: MCLK Source Divider 4"]
-    DIVM_4 = 4,
-    #[doc = "5: MCLK Source Divider 5"]
-    DIVM_5 = 5,
-    #[doc = "6: MCLK Source Divider 6"]
-    DIVM_6 = 6,
-    #[doc = "7: MCLK Source Divider 7"]
-    DIVM_7 = 7,
+    #[doc = "0: MCLK = Clock source /1"]
+    _1 = 0,
+    #[doc = "1: MCLK = Clock source /2"]
+    _2 = 1,
+    #[doc = "2: MCLK = Clock source /4"]
+    _4 = 2,
+    #[doc = "3: MCLK = Clock source /8"]
+    _8 = 3,
+    #[doc = "4: MCLK = Clock source /16"]
+    _16 = 4,
+    #[doc = "5: MCLK = Clock source /32"]
+    _32 = 5,
+    #[doc = "6: MCLK = Clock source /64"]
+    _64 = 6,
+    #[doc = "7: MCLK = Clock source /128"]
+    _128 = 7,
 }
 impl From<DIVM_A> for u8 {
     #[inline(always)]
@@ -68,100 +68,100 @@ impl DIVM_R {
     #[inline(always)]
     pub fn variant(&self) -> DIVM_A {
         match self.bits {
-            0 => DIVM_A::DIVM_0,
-            1 => DIVM_A::DIVM_1,
-            2 => DIVM_A::DIVM_2,
-            3 => DIVM_A::DIVM_3,
-            4 => DIVM_A::DIVM_4,
-            5 => DIVM_A::DIVM_5,
-            6 => DIVM_A::DIVM_6,
-            7 => DIVM_A::DIVM_7,
+            0 => DIVM_A::_1,
+            1 => DIVM_A::_2,
+            2 => DIVM_A::_4,
+            3 => DIVM_A::_8,
+            4 => DIVM_A::_16,
+            5 => DIVM_A::_32,
+            6 => DIVM_A::_64,
+            7 => DIVM_A::_128,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DIVM_0`"]
+    #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
-    pub fn is_divm_0(&self) -> bool {
-        *self == DIVM_A::DIVM_0
+    pub fn is_1(&self) -> bool {
+        *self == DIVM_A::_1
     }
-    #[doc = "Checks if the value of the field is `DIVM_1`"]
+    #[doc = "Checks if the value of the field is `_2`"]
     #[inline(always)]
-    pub fn is_divm_1(&self) -> bool {
-        *self == DIVM_A::DIVM_1
+    pub fn is_2(&self) -> bool {
+        *self == DIVM_A::_2
     }
-    #[doc = "Checks if the value of the field is `DIVM_2`"]
+    #[doc = "Checks if the value of the field is `_4`"]
     #[inline(always)]
-    pub fn is_divm_2(&self) -> bool {
-        *self == DIVM_A::DIVM_2
+    pub fn is_4(&self) -> bool {
+        *self == DIVM_A::_4
     }
-    #[doc = "Checks if the value of the field is `DIVM_3`"]
+    #[doc = "Checks if the value of the field is `_8`"]
     #[inline(always)]
-    pub fn is_divm_3(&self) -> bool {
-        *self == DIVM_A::DIVM_3
+    pub fn is_8(&self) -> bool {
+        *self == DIVM_A::_8
     }
-    #[doc = "Checks if the value of the field is `DIVM_4`"]
+    #[doc = "Checks if the value of the field is `_16`"]
     #[inline(always)]
-    pub fn is_divm_4(&self) -> bool {
-        *self == DIVM_A::DIVM_4
+    pub fn is_16(&self) -> bool {
+        *self == DIVM_A::_16
     }
-    #[doc = "Checks if the value of the field is `DIVM_5`"]
+    #[doc = "Checks if the value of the field is `_32`"]
     #[inline(always)]
-    pub fn is_divm_5(&self) -> bool {
-        *self == DIVM_A::DIVM_5
+    pub fn is_32(&self) -> bool {
+        *self == DIVM_A::_32
     }
-    #[doc = "Checks if the value of the field is `DIVM_6`"]
+    #[doc = "Checks if the value of the field is `_64`"]
     #[inline(always)]
-    pub fn is_divm_6(&self) -> bool {
-        *self == DIVM_A::DIVM_6
+    pub fn is_64(&self) -> bool {
+        *self == DIVM_A::_64
     }
-    #[doc = "Checks if the value of the field is `DIVM_7`"]
+    #[doc = "Checks if the value of the field is `_128`"]
     #[inline(always)]
-    pub fn is_divm_7(&self) -> bool {
-        *self == DIVM_A::DIVM_7
+    pub fn is_128(&self) -> bool {
+        *self == DIVM_A::_128
     }
 }
 #[doc = "Field `DIVM` writer - MCLK Divider Bit: 0"]
 pub type DIVM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL5_SPEC, u8, DIVM_A, 3, O>;
 impl<'a, const O: u8> DIVM_W<'a, O> {
-    #[doc = "MCLK Source Divider 0"]
+    #[doc = "MCLK = Clock source /1"]
     #[inline(always)]
-    pub fn divm_0(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_0)
+    pub fn _1(self) -> &'a mut W {
+        self.variant(DIVM_A::_1)
     }
-    #[doc = "MCLK Source Divider 1"]
+    #[doc = "MCLK = Clock source /2"]
     #[inline(always)]
-    pub fn divm_1(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_1)
+    pub fn _2(self) -> &'a mut W {
+        self.variant(DIVM_A::_2)
     }
-    #[doc = "MCLK Source Divider 2"]
+    #[doc = "MCLK = Clock source /4"]
     #[inline(always)]
-    pub fn divm_2(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_2)
+    pub fn _4(self) -> &'a mut W {
+        self.variant(DIVM_A::_4)
     }
-    #[doc = "MCLK Source Divider 3"]
+    #[doc = "MCLK = Clock source /8"]
     #[inline(always)]
-    pub fn divm_3(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_3)
+    pub fn _8(self) -> &'a mut W {
+        self.variant(DIVM_A::_8)
     }
-    #[doc = "MCLK Source Divider 4"]
+    #[doc = "MCLK = Clock source /16"]
     #[inline(always)]
-    pub fn divm_4(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_4)
+    pub fn _16(self) -> &'a mut W {
+        self.variant(DIVM_A::_16)
     }
-    #[doc = "MCLK Source Divider 5"]
+    #[doc = "MCLK = Clock source /32"]
     #[inline(always)]
-    pub fn divm_5(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_5)
+    pub fn _32(self) -> &'a mut W {
+        self.variant(DIVM_A::_32)
     }
-    #[doc = "MCLK Source Divider 6"]
+    #[doc = "MCLK = Clock source /64"]
     #[inline(always)]
-    pub fn divm_6(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_6)
+    pub fn _64(self) -> &'a mut W {
+        self.variant(DIVM_A::_64)
     }
-    #[doc = "MCLK Source Divider 7"]
+    #[doc = "MCLK = Clock source /128"]
     #[inline(always)]
-    pub fn divm_7(self) -> &'a mut W {
-        self.variant(DIVM_A::DIVM_7)
+    pub fn _128(self) -> &'a mut W {
+        self.variant(DIVM_A::_128)
     }
 }
 #[doc = "Field `DIVS` reader - SMCLK Divider Bit: 0"]
@@ -170,14 +170,14 @@ pub type DIVS_R = crate::FieldReader<u8, DIVS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVS_A {
-    #[doc = "0: SMCLK Source Divider 0"]
-    DIVS_0 = 0,
-    #[doc = "1: SMCLK Source Divider 1"]
-    DIVS_1 = 1,
-    #[doc = "2: SMCLK Source Divider 2"]
-    DIVS_2 = 2,
-    #[doc = "3: SMCLK Source Divider 3"]
-    DIVS_3 = 3,
+    #[doc = "0: SMCLK = MCLK /1"]
+    _1 = 0,
+    #[doc = "1: SMCLK = MCLK /2"]
+    _2 = 1,
+    #[doc = "2: SMCLK = MCLK /4"]
+    _4 = 2,
+    #[doc = "3: SMCLK = MCLK /8"]
+    _8 = 3,
 }
 impl From<DIVS_A> for u8 {
     #[inline(always)]
@@ -190,56 +190,56 @@ impl DIVS_R {
     #[inline(always)]
     pub fn variant(&self) -> DIVS_A {
         match self.bits {
-            0 => DIVS_A::DIVS_0,
-            1 => DIVS_A::DIVS_1,
-            2 => DIVS_A::DIVS_2,
-            3 => DIVS_A::DIVS_3,
+            0 => DIVS_A::_1,
+            1 => DIVS_A::_2,
+            2 => DIVS_A::_4,
+            3 => DIVS_A::_8,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DIVS_0`"]
+    #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
-    pub fn is_divs_0(&self) -> bool {
-        *self == DIVS_A::DIVS_0
+    pub fn is_1(&self) -> bool {
+        *self == DIVS_A::_1
     }
-    #[doc = "Checks if the value of the field is `DIVS_1`"]
+    #[doc = "Checks if the value of the field is `_2`"]
     #[inline(always)]
-    pub fn is_divs_1(&self) -> bool {
-        *self == DIVS_A::DIVS_1
+    pub fn is_2(&self) -> bool {
+        *self == DIVS_A::_2
     }
-    #[doc = "Checks if the value of the field is `DIVS_2`"]
+    #[doc = "Checks if the value of the field is `_4`"]
     #[inline(always)]
-    pub fn is_divs_2(&self) -> bool {
-        *self == DIVS_A::DIVS_2
+    pub fn is_4(&self) -> bool {
+        *self == DIVS_A::_4
     }
-    #[doc = "Checks if the value of the field is `DIVS_3`"]
+    #[doc = "Checks if the value of the field is `_8`"]
     #[inline(always)]
-    pub fn is_divs_3(&self) -> bool {
-        *self == DIVS_A::DIVS_3
+    pub fn is_8(&self) -> bool {
+        *self == DIVS_A::_8
     }
 }
 #[doc = "Field `DIVS` writer - SMCLK Divider Bit: 0"]
 pub type DIVS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL5_SPEC, u8, DIVS_A, 2, O>;
 impl<'a, const O: u8> DIVS_W<'a, O> {
-    #[doc = "SMCLK Source Divider 0"]
+    #[doc = "SMCLK = MCLK /1"]
     #[inline(always)]
-    pub fn divs_0(self) -> &'a mut W {
-        self.variant(DIVS_A::DIVS_0)
+    pub fn _1(self) -> &'a mut W {
+        self.variant(DIVS_A::_1)
     }
-    #[doc = "SMCLK Source Divider 1"]
+    #[doc = "SMCLK = MCLK /2"]
     #[inline(always)]
-    pub fn divs_1(self) -> &'a mut W {
-        self.variant(DIVS_A::DIVS_1)
+    pub fn _2(self) -> &'a mut W {
+        self.variant(DIVS_A::_2)
     }
-    #[doc = "SMCLK Source Divider 2"]
+    #[doc = "SMCLK = MCLK /4"]
     #[inline(always)]
-    pub fn divs_2(self) -> &'a mut W {
-        self.variant(DIVS_A::DIVS_2)
+    pub fn _4(self) -> &'a mut W {
+        self.variant(DIVS_A::_4)
     }
-    #[doc = "SMCLK Source Divider 3"]
+    #[doc = "SMCLK = MCLK /8"]
     #[inline(always)]
-    pub fn divs_3(self) -> &'a mut W {
-        self.variant(DIVS_A::DIVS_3)
+    pub fn _8(self) -> &'a mut W {
+        self.variant(DIVS_A::_8)
     }
 }
 #[doc = "Field `SMCLKOFF` reader - SMCLK off"]

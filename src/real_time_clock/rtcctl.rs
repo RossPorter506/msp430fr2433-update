@@ -52,22 +52,22 @@ pub type RTCPS_R = crate::FieldReader<u8, RTCPS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTCPS_A {
-    #[doc = "0: Low-Power-Counter Clock Pre-divider Select: 0"]
-    RTCPS_0 = 0,
-    #[doc = "1: Low-Power-Counter Clock Pre-divider Select: 1"]
-    RTCPS_1 = 1,
-    #[doc = "2: Low-Power-Counter Clock Pre-divider Select: 2"]
-    RTCPS_2 = 2,
-    #[doc = "3: Low-Power-Counter Clock Pre-divider Select: 3"]
-    RTCPS_3 = 3,
-    #[doc = "4: Low-Power-Counter Clock Pre-divider Select: 4"]
-    RTCPS_4 = 4,
-    #[doc = "5: Low-Power-Counter Clock Pre-divider Select: 5"]
-    RTCPS_5 = 5,
-    #[doc = "6: Low-Power-Counter Clock Pre-divider Select: 6"]
-    RTCPS_6 = 6,
-    #[doc = "7: Low-Power-Counter Clock Pre-divider Select: 7"]
-    RTCPS_7 = 7,
+    #[doc = "0: RTC Predivider /1"]
+    _1 = 0,
+    #[doc = "1: RTC Predivider /10"]
+    _10 = 1,
+    #[doc = "2: RTC Predivider /100"]
+    _100 = 2,
+    #[doc = "3: RTC Predivider /1000"]
+    _1000 = 3,
+    #[doc = "4: RTC Predivider /16"]
+    _16 = 4,
+    #[doc = "5: RTC Predivider /64"]
+    _64 = 5,
+    #[doc = "6: RTC Predivider /256"]
+    _256 = 6,
+    #[doc = "7: RTC Predivider /1024"]
+    _1024 = 7,
 }
 impl From<RTCPS_A> for u8 {
     #[inline(always)]
@@ -80,100 +80,100 @@ impl RTCPS_R {
     #[inline(always)]
     pub fn variant(&self) -> RTCPS_A {
         match self.bits {
-            0 => RTCPS_A::RTCPS_0,
-            1 => RTCPS_A::RTCPS_1,
-            2 => RTCPS_A::RTCPS_2,
-            3 => RTCPS_A::RTCPS_3,
-            4 => RTCPS_A::RTCPS_4,
-            5 => RTCPS_A::RTCPS_5,
-            6 => RTCPS_A::RTCPS_6,
-            7 => RTCPS_A::RTCPS_7,
+            0 => RTCPS_A::_1,
+            1 => RTCPS_A::_10,
+            2 => RTCPS_A::_100,
+            3 => RTCPS_A::_1000,
+            4 => RTCPS_A::_16,
+            5 => RTCPS_A::_64,
+            6 => RTCPS_A::_256,
+            7 => RTCPS_A::_1024,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `RTCPS_0`"]
+    #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
-    pub fn is_rtcps_0(&self) -> bool {
-        *self == RTCPS_A::RTCPS_0
+    pub fn is_1(&self) -> bool {
+        *self == RTCPS_A::_1
     }
-    #[doc = "Checks if the value of the field is `RTCPS_1`"]
+    #[doc = "Checks if the value of the field is `_10`"]
     #[inline(always)]
-    pub fn is_rtcps_1(&self) -> bool {
-        *self == RTCPS_A::RTCPS_1
+    pub fn is_10(&self) -> bool {
+        *self == RTCPS_A::_10
     }
-    #[doc = "Checks if the value of the field is `RTCPS_2`"]
+    #[doc = "Checks if the value of the field is `_100`"]
     #[inline(always)]
-    pub fn is_rtcps_2(&self) -> bool {
-        *self == RTCPS_A::RTCPS_2
+    pub fn is_100(&self) -> bool {
+        *self == RTCPS_A::_100
     }
-    #[doc = "Checks if the value of the field is `RTCPS_3`"]
+    #[doc = "Checks if the value of the field is `_1000`"]
     #[inline(always)]
-    pub fn is_rtcps_3(&self) -> bool {
-        *self == RTCPS_A::RTCPS_3
+    pub fn is_1000(&self) -> bool {
+        *self == RTCPS_A::_1000
     }
-    #[doc = "Checks if the value of the field is `RTCPS_4`"]
+    #[doc = "Checks if the value of the field is `_16`"]
     #[inline(always)]
-    pub fn is_rtcps_4(&self) -> bool {
-        *self == RTCPS_A::RTCPS_4
+    pub fn is_16(&self) -> bool {
+        *self == RTCPS_A::_16
     }
-    #[doc = "Checks if the value of the field is `RTCPS_5`"]
+    #[doc = "Checks if the value of the field is `_64`"]
     #[inline(always)]
-    pub fn is_rtcps_5(&self) -> bool {
-        *self == RTCPS_A::RTCPS_5
+    pub fn is_64(&self) -> bool {
+        *self == RTCPS_A::_64
     }
-    #[doc = "Checks if the value of the field is `RTCPS_6`"]
+    #[doc = "Checks if the value of the field is `_256`"]
     #[inline(always)]
-    pub fn is_rtcps_6(&self) -> bool {
-        *self == RTCPS_A::RTCPS_6
+    pub fn is_256(&self) -> bool {
+        *self == RTCPS_A::_256
     }
-    #[doc = "Checks if the value of the field is `RTCPS_7`"]
+    #[doc = "Checks if the value of the field is `_1024`"]
     #[inline(always)]
-    pub fn is_rtcps_7(&self) -> bool {
-        *self == RTCPS_A::RTCPS_7
+    pub fn is_1024(&self) -> bool {
+        *self == RTCPS_A::_1024
     }
 }
 #[doc = "Field `RTCPS` writer - Low-Power-Counter Clock Pre-divider Select Bit: 0"]
 pub type RTCPS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, RTCCTL_SPEC, u8, RTCPS_A, 3, O>;
 impl<'a, const O: u8> RTCPS_W<'a, O> {
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 0"]
+    #[doc = "RTC Predivider /1"]
     #[inline(always)]
-    pub fn rtcps_0(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_0)
+    pub fn _1(self) -> &'a mut W {
+        self.variant(RTCPS_A::_1)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 1"]
+    #[doc = "RTC Predivider /10"]
     #[inline(always)]
-    pub fn rtcps_1(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_1)
+    pub fn _10(self) -> &'a mut W {
+        self.variant(RTCPS_A::_10)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 2"]
+    #[doc = "RTC Predivider /100"]
     #[inline(always)]
-    pub fn rtcps_2(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_2)
+    pub fn _100(self) -> &'a mut W {
+        self.variant(RTCPS_A::_100)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 3"]
+    #[doc = "RTC Predivider /1000"]
     #[inline(always)]
-    pub fn rtcps_3(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_3)
+    pub fn _1000(self) -> &'a mut W {
+        self.variant(RTCPS_A::_1000)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 4"]
+    #[doc = "RTC Predivider /16"]
     #[inline(always)]
-    pub fn rtcps_4(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_4)
+    pub fn _16(self) -> &'a mut W {
+        self.variant(RTCPS_A::_16)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 5"]
+    #[doc = "RTC Predivider /64"]
     #[inline(always)]
-    pub fn rtcps_5(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_5)
+    pub fn _64(self) -> &'a mut W {
+        self.variant(RTCPS_A::_64)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 6"]
+    #[doc = "RTC Predivider /256"]
     #[inline(always)]
-    pub fn rtcps_6(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_6)
+    pub fn _256(self) -> &'a mut W {
+        self.variant(RTCPS_A::_256)
     }
-    #[doc = "Low-Power-Counter Clock Pre-divider Select: 7"]
+    #[doc = "RTC Predivider /1024"]
     #[inline(always)]
-    pub fn rtcps_7(self) -> &'a mut W {
-        self.variant(RTCPS_A::RTCPS_7)
+    pub fn _1024(self) -> &'a mut W {
+        self.variant(RTCPS_A::_1024)
     }
 }
 #[doc = "Field `RTCSS` reader - Low-Power-Counter Clock Source Select Bit: 0"]
@@ -182,14 +182,14 @@ pub type RTCSS_R = crate::FieldReader<u8, RTCSS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTCSS_A {
-    #[doc = "0: Low-Power-Counter Clock Source Select: 0"]
-    RTCSS_0 = 0,
-    #[doc = "1: Low-Power-Counter Clock Source Select: 1"]
-    RTCSS_1 = 1,
-    #[doc = "2: Low-Power-Counter Clock Source Select: 2"]
-    RTCSS_2 = 2,
-    #[doc = "3: Low-Power-Counter Clock Source Select: 3"]
-    RTCSS_3 = 3,
+    #[doc = "0: Low-Power-Counter Clock Source Select: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Low-Power-Counter Clock Source Select: SMCLK"]
+    SMCLK = 1,
+    #[doc = "2: Low-Power-Counter Clock Source Select: XT1CLK"]
+    XT1CLK = 2,
+    #[doc = "3: Low-Power-Counter Clock Source Select: VLOCLK"]
+    VLOCLK = 3,
 }
 impl From<RTCSS_A> for u8 {
     #[inline(always)]
@@ -202,56 +202,56 @@ impl RTCSS_R {
     #[inline(always)]
     pub fn variant(&self) -> RTCSS_A {
         match self.bits {
-            0 => RTCSS_A::RTCSS_0,
-            1 => RTCSS_A::RTCSS_1,
-            2 => RTCSS_A::RTCSS_2,
-            3 => RTCSS_A::RTCSS_3,
+            0 => RTCSS_A::DISABLED,
+            1 => RTCSS_A::SMCLK,
+            2 => RTCSS_A::XT1CLK,
+            3 => RTCSS_A::VLOCLK,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `RTCSS_0`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_rtcss_0(&self) -> bool {
-        *self == RTCSS_A::RTCSS_0
+    pub fn is_disabled(&self) -> bool {
+        *self == RTCSS_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `RTCSS_1`"]
+    #[doc = "Checks if the value of the field is `SMCLK`"]
     #[inline(always)]
-    pub fn is_rtcss_1(&self) -> bool {
-        *self == RTCSS_A::RTCSS_1
+    pub fn is_smclk(&self) -> bool {
+        *self == RTCSS_A::SMCLK
     }
-    #[doc = "Checks if the value of the field is `RTCSS_2`"]
+    #[doc = "Checks if the value of the field is `XT1CLK`"]
     #[inline(always)]
-    pub fn is_rtcss_2(&self) -> bool {
-        *self == RTCSS_A::RTCSS_2
+    pub fn is_xt1clk(&self) -> bool {
+        *self == RTCSS_A::XT1CLK
     }
-    #[doc = "Checks if the value of the field is `RTCSS_3`"]
+    #[doc = "Checks if the value of the field is `VLOCLK`"]
     #[inline(always)]
-    pub fn is_rtcss_3(&self) -> bool {
-        *self == RTCSS_A::RTCSS_3
+    pub fn is_vloclk(&self) -> bool {
+        *self == RTCSS_A::VLOCLK
     }
 }
 #[doc = "Field `RTCSS` writer - Low-Power-Counter Clock Source Select Bit: 0"]
 pub type RTCSS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, RTCCTL_SPEC, u8, RTCSS_A, 2, O>;
 impl<'a, const O: u8> RTCSS_W<'a, O> {
-    #[doc = "Low-Power-Counter Clock Source Select: 0"]
+    #[doc = "Low-Power-Counter Clock Source Select: Disabled"]
     #[inline(always)]
-    pub fn rtcss_0(self) -> &'a mut W {
-        self.variant(RTCSS_A::RTCSS_0)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(RTCSS_A::DISABLED)
     }
-    #[doc = "Low-Power-Counter Clock Source Select: 1"]
+    #[doc = "Low-Power-Counter Clock Source Select: SMCLK"]
     #[inline(always)]
-    pub fn rtcss_1(self) -> &'a mut W {
-        self.variant(RTCSS_A::RTCSS_1)
+    pub fn smclk(self) -> &'a mut W {
+        self.variant(RTCSS_A::SMCLK)
     }
-    #[doc = "Low-Power-Counter Clock Source Select: 2"]
+    #[doc = "Low-Power-Counter Clock Source Select: XT1CLK"]
     #[inline(always)]
-    pub fn rtcss_2(self) -> &'a mut W {
-        self.variant(RTCSS_A::RTCSS_2)
+    pub fn xt1clk(self) -> &'a mut W {
+        self.variant(RTCSS_A::XT1CLK)
     }
-    #[doc = "Low-Power-Counter Clock Source Select: 3"]
+    #[doc = "Low-Power-Counter Clock Source Select: VLOCLK"]
     #[inline(always)]
-    pub fn rtcss_3(self) -> &'a mut W {
-        self.variant(RTCSS_A::RTCSS_3)
+    pub fn vloclk(self) -> &'a mut W {
+        self.variant(RTCSS_A::VLOCLK)
     }
 }
 impl R {

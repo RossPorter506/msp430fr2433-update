@@ -40,22 +40,14 @@ pub type SELMS_R = crate::FieldReader<u8, SELMS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELMS_A {
-    #[doc = "0: MCLK and SMCLK Source Select 0"]
-    SELMS_0 = 0,
-    #[doc = "1: MCLK and SMCLK Source Select 1"]
-    SELMS_1 = 1,
-    #[doc = "2: MCLK and SMCLK Source Select 2"]
-    SELMS_2 = 2,
-    #[doc = "3: MCLK and SMCLK Source Select 3"]
-    SELMS_3 = 3,
-    #[doc = "4: MCLK and SMCLK Source Select 4"]
-    SELMS_4 = 4,
-    #[doc = "5: MCLK and SMCLK Source Select 5"]
-    SELMS_5 = 5,
-    #[doc = "6: MCLK and SMCLK Source Select 6"]
-    SELMS_6 = 6,
-    #[doc = "7: MCLK and SMCLK Source Select 7"]
-    SELMS_7 = 7,
+    #[doc = "0: DCO CLKDIV"]
+    DCOCLKDIV = 0,
+    #[doc = "1: REFOCLK"]
+    REFOCLK = 1,
+    #[doc = "2: XT1CLK"]
+    XT1CLK = 2,
+    #[doc = "3: VLOCLK"]
+    VLOCLK = 3,
 }
 impl From<SELMS_A> for u8 {
     #[inline(always)]
@@ -66,108 +58,110 @@ impl From<SELMS_A> for u8 {
 impl SELMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELMS_A {
+    pub fn variant(&self) -> Option<SELMS_A> {
         match self.bits {
-            0 => SELMS_A::SELMS_0,
-            1 => SELMS_A::SELMS_1,
-            2 => SELMS_A::SELMS_2,
-            3 => SELMS_A::SELMS_3,
-            4 => SELMS_A::SELMS_4,
-            5 => SELMS_A::SELMS_5,
-            6 => SELMS_A::SELMS_6,
-            7 => SELMS_A::SELMS_7,
-            _ => unreachable!(),
+            0 => Some(SELMS_A::DCOCLKDIV),
+            1 => Some(SELMS_A::REFOCLK),
+            2 => Some(SELMS_A::XT1CLK),
+            3 => Some(SELMS_A::VLOCLK),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SELMS_0`"]
+    #[doc = "Checks if the value of the field is `DCOCLKDIV`"]
     #[inline(always)]
-    pub fn is_selms_0(&self) -> bool {
-        *self == SELMS_A::SELMS_0
+    pub fn is_dcoclkdiv(&self) -> bool {
+        *self == SELMS_A::DCOCLKDIV
     }
-    #[doc = "Checks if the value of the field is `SELMS_1`"]
+    #[doc = "Checks if the value of the field is `REFOCLK`"]
     #[inline(always)]
-    pub fn is_selms_1(&self) -> bool {
-        *self == SELMS_A::SELMS_1
+    pub fn is_refoclk(&self) -> bool {
+        *self == SELMS_A::REFOCLK
     }
-    #[doc = "Checks if the value of the field is `SELMS_2`"]
+    #[doc = "Checks if the value of the field is `XT1CLK`"]
     #[inline(always)]
-    pub fn is_selms_2(&self) -> bool {
-        *self == SELMS_A::SELMS_2
+    pub fn is_xt1clk(&self) -> bool {
+        *self == SELMS_A::XT1CLK
     }
-    #[doc = "Checks if the value of the field is `SELMS_3`"]
+    #[doc = "Checks if the value of the field is `VLOCLK`"]
     #[inline(always)]
-    pub fn is_selms_3(&self) -> bool {
-        *self == SELMS_A::SELMS_3
-    }
-    #[doc = "Checks if the value of the field is `SELMS_4`"]
-    #[inline(always)]
-    pub fn is_selms_4(&self) -> bool {
-        *self == SELMS_A::SELMS_4
-    }
-    #[doc = "Checks if the value of the field is `SELMS_5`"]
-    #[inline(always)]
-    pub fn is_selms_5(&self) -> bool {
-        *self == SELMS_A::SELMS_5
-    }
-    #[doc = "Checks if the value of the field is `SELMS_6`"]
-    #[inline(always)]
-    pub fn is_selms_6(&self) -> bool {
-        *self == SELMS_A::SELMS_6
-    }
-    #[doc = "Checks if the value of the field is `SELMS_7`"]
-    #[inline(always)]
-    pub fn is_selms_7(&self) -> bool {
-        *self == SELMS_A::SELMS_7
+    pub fn is_vloclk(&self) -> bool {
+        *self == SELMS_A::VLOCLK
     }
 }
 #[doc = "Field `SELMS` writer - MCLK and SMCLK Source Select Bit: 0"]
-pub type SELMS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL4_SPEC, u8, SELMS_A, 3, O>;
+pub type SELMS_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL4_SPEC, u8, SELMS_A, 3, O>;
 impl<'a, const O: u8> SELMS_W<'a, O> {
-    #[doc = "MCLK and SMCLK Source Select 0"]
+    #[doc = "DCO CLKDIV"]
     #[inline(always)]
-    pub fn selms_0(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_0)
+    pub fn dcoclkdiv(self) -> &'a mut W {
+        self.variant(SELMS_A::DCOCLKDIV)
     }
-    #[doc = "MCLK and SMCLK Source Select 1"]
+    #[doc = "REFOCLK"]
     #[inline(always)]
-    pub fn selms_1(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_1)
+    pub fn refoclk(self) -> &'a mut W {
+        self.variant(SELMS_A::REFOCLK)
     }
-    #[doc = "MCLK and SMCLK Source Select 2"]
+    #[doc = "XT1CLK"]
     #[inline(always)]
-    pub fn selms_2(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_2)
+    pub fn xt1clk(self) -> &'a mut W {
+        self.variant(SELMS_A::XT1CLK)
     }
-    #[doc = "MCLK and SMCLK Source Select 3"]
+    #[doc = "VLOCLK"]
     #[inline(always)]
-    pub fn selms_3(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_3)
-    }
-    #[doc = "MCLK and SMCLK Source Select 4"]
-    #[inline(always)]
-    pub fn selms_4(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_4)
-    }
-    #[doc = "MCLK and SMCLK Source Select 5"]
-    #[inline(always)]
-    pub fn selms_5(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_5)
-    }
-    #[doc = "MCLK and SMCLK Source Select 6"]
-    #[inline(always)]
-    pub fn selms_6(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_6)
-    }
-    #[doc = "MCLK and SMCLK Source Select 7"]
-    #[inline(always)]
-    pub fn selms_7(self) -> &'a mut W {
-        self.variant(SELMS_A::SELMS_7)
+    pub fn vloclk(self) -> &'a mut W {
+        self.variant(SELMS_A::VLOCLK)
     }
 }
 #[doc = "Field `SELA` reader - ACLK Source Select Bit: 0"]
-pub type SELA_R = crate::BitReader<bool>;
+pub type SELA_R = crate::BitReader<SELA_A>;
+#[doc = "ACLK Source Select Bit: 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SELA_A {
+    #[doc = "0: Source ACLK from XT1CLK with divider (no more than 40kHz)"]
+    XT1CLK = 0,
+    #[doc = "1: Source ACLK from the internal 32kHz clock source"]
+    REFOCLK = 1,
+}
+impl From<SELA_A> for bool {
+    #[inline(always)]
+    fn from(variant: SELA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SELA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SELA_A {
+        match self.bits {
+            false => SELA_A::XT1CLK,
+            true => SELA_A::REFOCLK,
+        }
+    }
+    #[doc = "Checks if the value of the field is `XT1CLK`"]
+    #[inline(always)]
+    pub fn is_xt1clk(&self) -> bool {
+        *self == SELA_A::XT1CLK
+    }
+    #[doc = "Checks if the value of the field is `REFOCLK`"]
+    #[inline(always)]
+    pub fn is_refoclk(&self) -> bool {
+        *self == SELA_A::REFOCLK
+    }
+}
 #[doc = "Field `SELA` writer - ACLK Source Select Bit: 0"]
-pub type SELA_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL4_SPEC, bool, O>;
+pub type SELA_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL4_SPEC, SELA_A, O>;
+impl<'a, const O: u8> SELA_W<'a, O> {
+    #[doc = "Source ACLK from XT1CLK with divider (no more than 40kHz)"]
+    #[inline(always)]
+    pub fn xt1clk(self) -> &'a mut W {
+        self.variant(SELA_A::XT1CLK)
+    }
+    #[doc = "Source ACLK from the internal 32kHz clock source"]
+    #[inline(always)]
+    pub fn refoclk(self) -> &'a mut W {
+        self.variant(SELA_A::REFOCLK)
+    }
+}
 impl R {
     #[doc = "Bits 0:2 - MCLK and SMCLK Source Select Bit: 0"]
     #[inline(always)]
