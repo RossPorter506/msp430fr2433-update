@@ -178,62 +178,118 @@ pub enum Interrupt {
     #[doc = "58 - 0xFFFC System Non-maskable"]
     SYSNMI = 58,
 }
-#[doc = "Port 1/2"]
-pub struct PORT_1_2 {
+#[doc = "Port A"]
+pub struct PA {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT_1_2 {}
-impl PORT_1_2 {
+unsafe impl Send for PA {}
+impl PA {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const port_1_2::RegisterBlock = 0x0200 as *const _;
+    pub const PTR: *const pa::RegisterBlock = 0x0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const port_1_2::RegisterBlock {
+    pub const fn ptr() -> *const pa::RegisterBlock {
         Self::PTR
     }
 }
-impl Deref for PORT_1_2 {
-    type Target = port_1_2::RegisterBlock;
+impl Deref for PA {
+    type Target = pa::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT_1_2 {
+impl core::fmt::Debug for PA {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT_1_2").finish()
+        f.debug_struct("PA").finish()
     }
 }
-#[doc = "Port 1/2"]
-pub mod port_1_2;
-#[doc = "Port 3"]
-pub struct PORT_3 {
+#[doc = "Port A"]
+pub mod pa;
+#[doc = "Port 1"]
+pub struct P1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT_3 {}
-impl PORT_3 {
+unsafe impl Send for P1 {}
+impl P1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const port_3::RegisterBlock = 0x0220 as *const _;
+    pub const PTR: *const p1::RegisterBlock = 0x0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const port_3::RegisterBlock {
+    pub const fn ptr() -> *const p1::RegisterBlock {
         Self::PTR
     }
 }
-impl Deref for PORT_3 {
-    type Target = port_3::RegisterBlock;
+impl Deref for P1 {
+    type Target = p1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT_3 {
+impl core::fmt::Debug for P1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT_3").finish()
+        f.debug_struct("P1").finish()
+    }
+}
+#[doc = "Port 1"]
+pub mod p1;
+#[doc = "Port 2"]
+pub struct P2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for P2 {}
+impl P2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const p2::RegisterBlock = 0x0200 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const p2::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for P2 {
+    type Target = p2::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for P2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("P2").finish()
+    }
+}
+#[doc = "Port 2"]
+pub mod p2;
+#[doc = "Port 3"]
+pub struct P3 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for P3 {}
+impl P3 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const p3::RegisterBlock = 0x0220 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const p3::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for P3 {
+    type Target = p3::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for P3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("P3").finish()
     }
 }
 #[doc = "Port 3"]
-pub mod port_3;
+pub mod p3;
 #[doc = "USCI_A0 UART Mode"]
 pub struct USCI_A0_UART_MODE {
     _marker: PhantomData<*const ()>,
@@ -855,10 +911,14 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
 pub struct Peripherals {
-    #[doc = "PORT_1_2"]
-    pub PORT_1_2: PORT_1_2,
-    #[doc = "PORT_3"]
-    pub PORT_3: PORT_3,
+    #[doc = "PA"]
+    pub PA: PA,
+    #[doc = "P1"]
+    pub P1: P1,
+    #[doc = "P2"]
+    pub P2: P2,
+    #[doc = "P3"]
+    pub P3: P3,
     #[doc = "USCI_A0_UART_MODE"]
     pub USCI_A0_UART_MODE: USCI_A0_UART_MODE,
     #[doc = "USCI_A0_SPI_MODE"]
@@ -925,10 +985,16 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            PORT_1_2: PORT_1_2 {
+            PA: PA {
                 _marker: PhantomData,
             },
-            PORT_3: PORT_3 {
+            P1: P1 {
+                _marker: PhantomData,
+            },
+            P2: P2 {
+                _marker: PhantomData,
+            },
+            P3: P3 {
                 _marker: PhantomData,
             },
             USCI_A0_UART_MODE: USCI_A0_UART_MODE {
